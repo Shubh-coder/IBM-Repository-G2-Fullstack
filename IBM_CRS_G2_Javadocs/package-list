@@ -1,0 +1,7 @@
+com.crs.ibm.application
+com.crs.ibm.bean
+com.crs.ibm.constant
+com.crs.ibm.dao
+com.crs.ibm.exception
+com.crs.ibm.service
+com.crs.ibm.utils

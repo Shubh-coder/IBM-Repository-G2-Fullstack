@@ -1,0 +1,33 @@
+ <body>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Qualification</th>
+        <th scope="col">Branch</th>
+        <th scope="col">Address</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Grade</th>
+        <th></th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let studentDetails of this.listOfEnrolledStudents' >
+            <td >{{studentDetails.studentId}}</td>
+            <td>{{studentDetails.studentName | uppercase}}</td>
+            <td >{{studentDetails.studentQualification}}</td>
+            <td >{{studentDetails.studentBranch}}</td>
+            <td >{{studentDetails.studentAddress}}</td>
+            <td >{{studentDetails.studentContactNo}}</td>
+            <td >{{studentDetails.studentGrade}}</td>
+ 
+            
+        </tr>
+       
+    </tbody>
+  </table>
+</body>
+ 
+ 

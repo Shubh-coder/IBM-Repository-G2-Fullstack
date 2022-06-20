@@ -1,0 +1,118 @@
+<body>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Qualification</th>
+            <th scope="col">Branch</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Grade</th>
+            <th></th>
+    
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let row of this.studentdata' >
+                <td >{{row.studentId}}</td>
+                <td>{{row.studentName | uppercase}}</td>
+                <td >{{row.studentQualification}}</td>
+                <td >{{row.studentBranch}}</td>
+                <td >{{row.studentAddress}}</td>
+                <td >{{row.studentContactNo}}</td>
+                <td >{{row.studentGrade}}</td>
+    
+                <button (click)="onEdit(row)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" class="btn btn-success">AddGrade</button>
+                
+            </tr>
+           
+        </tbody>
+      </table>
+    </body>
+     
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Grade</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form >
+              <div class="form-group">
+                <label for="exampleInputEmail1">ID</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Name</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Qualification</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Branch</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Address</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Contact</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+        
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Grade</label>
+                <input type="text" formControlName="grade" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </form>
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+     <!-- Modal -->
+     
+     <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Grade</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                 <form #sgrade = "ngForm" (ngSubmit) = "UpdateStudentGrade(sgrade.value)"> 
+                    <div>
+                    <input type = "text" name = "grade" placeholder = "grade" ngModel>
+                    <br/>
+                    <input type = "submit" value = "submit">
+                    </div>
+                    </form>
+      
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+               
+            </div>
+          </div>
+        </div>
+      </div>
